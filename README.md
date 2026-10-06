@@ -26,8 +26,8 @@ Users should be able to:
 
 ## Links
 
-- Solution URL: 
-- Live Site URL: 
+- Solution URL: https://www.frontendmentor.io/solutions/interactive-rating-component-oBBoG7z5AO
+- Live Site URL: https://interactiveratingcomp-abe.netlify.app
 
 ## Author
 
