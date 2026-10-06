@@ -43,7 +43,7 @@ body {
 main {
     min-height: 100dvh;
     display: grid;
-    place-content: center;
+    place-items: center;
 }
 
 img {
@@ -51,7 +51,7 @@ img {
 }
 
 .card {
-    width: 25.75rem;
+    width: min(100%, 25.75rem);
     color: var(--clr-font-primary);
     border-radius: 1.875rem;
     height: var(--card-fixed-height);
@@ -193,7 +193,7 @@ img {
     }
 
     .card {
-        width: 20.4375rem;
+        width: min(100%, 20.4375rem);
     }
 
     .card :is(h1, h2) {
