@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Interactive rating component | solution to the Frontend Mentor challenge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive rating component</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <main>
+        <div class="card" data-card>
+            <div class="card__inner">
+                <section class="card__intro" data-card-intro>
+                <span class="card__intro-icon">
+                    <img src="./images/icon-star.svg" alt="">
+                </span>
+                <div class="card__intro-main">
+                    <h1>How did we do?</h1>
+                    <p>Please let us know how we did with your support request. All feedback is appreciated to help us improve our offering!</p>
+                    <div class="card__rating-buttons">
+                        <button aria-label="Select rating 1 of 5" data-rating-btn data-rating-value="1" aria-pressed="false">
+                            <span aria-hidden="true">1</span>
+                        </button>
+                        <button aria-label="Select rating 2 of 5" data-rating-btn data-rating-value="2" aria-pressed="false">
+                            <span aria-hidden="true">2</span>
+                        </button>
+                        <button aria-label="Select rating 3 of 5" data-rating-btn data-rating-value="3" aria-pressed="false">
+                            <span aria-hidden="true">3</span>
+                        </button>
+                        <button aria-label="Select rating 4 of 5" data-rating-btn data-rating-value="4" aria-pressed="false">
+                            <span aria-hidden="true">4</span>
+                        </button>
+                        <button aria-label="Select rating 5 of 5" data-rating-btn data-rating-value="5" aria-pressed="false">
+                            <span aria-hidden="true">5</span>
+                        </button>
+                    </div>
+                </div>
+                <button class="card__rating-submit" data-rating-submit disabled>
+                    <span>Submit</span>
+                </button>
+            </section>
+            <section class="card__summary" data-card-summary aria-hidden="true">
+                <img class="card__summary-illustration" src="./images/illustration-thank-you.svg" alt="">
+                <div class="card__summary-rating" data-summary-rating>
+                    <p>You selected <span data-selected-rating>4</span> out of 5</p>
+                </div>
+                <div class="card__summary-main">
+                    <h2>Thank you!</h2>
+                    <p>We appreciate you taking the time to give a rating. If you ever need more support, don’t hesitate to get in touch!</p>
+                </div>
+            </section>
+            </div>
+        </div>
+    </main>
+    <script src="./script.js"></script>
+</body>
+</html>

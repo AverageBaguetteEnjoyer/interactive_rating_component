@@ -1,0 +1,244 @@
+:root {
+    --bg-body: oklch(19.487% 0.00684 258.417);
+    --bg-card: radial-gradient(
+        oklch(28.264% 0.02101 257.306) 0%,
+        oklch(23.32% 0.01964 258.378) 100%
+    );
+    --clr-font-primary: oklch(69.981% 0.02301 259.241);
+    --clr-font-secondary: oklch(100% 0.00011 271.152);
+    --clr-font-third: oklch(71.338% 0.18764 48.396);
+    --bg-btn-primary: oklch(29.789% 0.02142 254.192);
+    --bg-btn-secondary: oklch(71.338% 0.18764 48.396);
+    --bg-btn-third: oklch(100% 0.00011 271.152);
+    --clr-outline-focus: oklch(100% 0.00011 271.152);
+    --card-fixed-height: 26rem;
+    --font-family: "Overpass", sans-serif;
+    --animation-speed: .2s;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+button:focus-visible {
+    outline: 2px solid var(--clr-outline-focus);
+    outline-offset: .25rem;
+}
+
+body {
+    background: var(--bg-body);
+    font-family: var(--font-family);
+}
+
+main {
+    min-height: 100dvh;
+    display: grid;
+    place-content: center;
+}
+
+img {
+    display: block;
+}
+
+.card {
+    width: 25.75rem;
+    color: var(--clr-font-primary);
+    border-radius: 1.875rem;
+    height: var(--card-fixed-height);
+    overflow: hidden;
+}
+
+.card :is(h1, h2) {
+    color: var(--clr-font-secondary);
+    font-size: 1.75rem;
+    line-height: 2.1875rem;
+}
+
+.card__inner {
+    display: grid;
+    grid-template-rows: repeat(2, var(--card-fixed-height));
+    transition: transform var(--animation-speed);
+}
+
+.card.complete .card__inner {
+    transform: translateY(calc(var(--card-fixed-height) * -1));
+}
+
+.card.complete .card__intro {
+    visibility: hidden;
+}
+
+.card section {
+    background: var(--bg-card);
+}
+
+.card p {
+    font-size: .9375rem;
+    line-height: 1.5rem;
+}
+
+.card__intro {
+    padding: 2rem 1.9063rem;
+    display: grid;
+    gap: 2rem;
+    transition: visibility var(--animation-speed);
+}
+
+.card__intro-main {
+    display: grid;
+    gap: 1rem;
+}
+
+.card__intro-icon {
+    width: 3rem;
+    aspect-ratio: 1;
+    background: oklch(29.789% 0.02142 254.192);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+}
+
+.card__rating-buttons {
+    display: grid;
+    grid-template-columns: repeat(5, 3.1875rem);
+    justify-content: space-between;
+}
+
+.card__rating-buttons button {
+    aspect-ratio: 1;
+    color: var(--clr-font-secondary);
+    border-radius: 50%;
+    background: var(--bg-btn-primary);
+    display: grid;
+    place-content: center;
+    transition: background var(--animation-speed), color var(--animation-speed);
+}
+
+.card__rating-buttons button:is(:hover, :focus-visible) {
+    background: var(--bg-btn-secondary);
+    color: oklch(29.789% 0.02142 254.192);
+}
+
+.card__rating-buttons button[aria-pressed="true"] {
+    background: var(--bg-btn-third);
+    color: oklch(29.789% 0.02142 254.192);
+}
+
+.card__rating-buttons button span {
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.5rem;
+}
+
+.card__rating-submit {
+    height: 2.8125rem;
+    padding: .375rem;
+    background: var(--bg-btn-secondary);
+    font-size: .875rem;
+    border-radius: 22.5px;
+    transition: opacity var(--animation-speed), background var(--animation-speed);
+}
+
+.card__rating-submit:is(:hover:not(:disabled), :focus-visible:not(:disabled)) {
+    background: var(--bg-btn-third);
+}
+
+.card__rating-submit:disabled {
+    opacity: .5;
+    cursor: not-allowed;
+}
+
+.card__rating-submit span {
+    letter-spacing: .0106rem;
+    text-transform: uppercase;
+    line-height: 1.5rem;
+    font-weight: 600;
+}
+
+.card__summary {
+    padding: 2.5rem 2rem;
+    text-align: center;
+    display: grid;
+    gap: 2rem;
+    justify-items: center;
+}
+
+.card__summary-main {
+    display: grid;
+    gap: 1rem;
+}
+
+.card__summary-rating {
+    height: 2rem;
+    padding: .25rem 1rem;
+    background: oklch(29.789% 0.02142 254.192);
+    color: var(--clr-font-third);
+    font-size: .9375rem;
+    border-radius: 22.5px;
+}
+
+@media (max-width: 26.25rem) {
+    :root {
+        --card-fixed-height: 22.5rem;
+    }
+
+    .card {
+        width: 20.4375rem;
+    }
+
+    .card :is(h1, h2) {
+        font-size: 1.5rem;
+        line-height: 1.875rem;
+    }
+
+    .card p {
+        font-size: .875rem;
+        line-height: 1.375rem;
+    }
+
+    .card__intro {
+        padding: 1.5rem;
+        gap: 1.5rem;
+    }
+
+    .card__intro-icon {
+        width: 2.5rem;
+    }
+
+    .card__rating-buttons {
+        grid-template-columns: repeat(5, 2.625rem);
+    }
+
+    .card__rating-buttons button span {
+        font-size: .875rem;
+        line-height: 1.125rem;
+    }
+
+    .card__rating-submit span {
+        line-height: 1.125rem;
+    }
+
+    .card__summary {
+        gap: 1.5rem;
+    }
+
+    .card__summary-illustration {
+        width: 9rem;
+    }
+}
+
+@media(prefers-reduced-motion: reduce) {
+    :root {
+        --animation-speed: 0s;
+    }
+}
